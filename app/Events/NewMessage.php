@@ -19,10 +19,10 @@ class NewMessage implements ShouldBroadcastNow
     /**
      * Create a new event instance.
      */
-    public $user;
-    public function __construct($user)
+    public $data;
+    public function __construct($data)
     {
-        $this->user = $user;
+        $this->data = $data;
     }
 
     /**
@@ -32,7 +32,7 @@ class NewMessage implements ShouldBroadcastNow
      */
     public function broadcastOn()
     {   
-        return new Channel('get-all-channel');
+        return new Channel('getAllChannel');
     }
 }
 
